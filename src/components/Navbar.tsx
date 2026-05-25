@@ -91,12 +91,12 @@ export default function Navbar() {
             className="md:hidden border-t border-border overflow-hidden"
             style={{ background: "hsl(240 10% 3.9%)" }}
           >
-            <div className="flex flex-col px-6 py-4 gap-1">
+            <div className="flex flex-col px-6 py-1">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => { setMobileOpen(false); scrollToSection(link.href); }}
-                  className="text-lg font-semibold text-white hover:text-primary transition-colors py-4 px-4 text-left cursor-pointer rounded-xl hover:bg-white/5 active:bg-white/10"
+                  className="text-base font-medium text-white hover:text-primary transition-colors py-2.5 px-4 text-left cursor-pointer rounded-lg hover:bg-white/5 active:bg-white/10"
                 >
                   {link.label}
                 </button>
