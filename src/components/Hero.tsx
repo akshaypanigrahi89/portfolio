@@ -105,38 +105,42 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="hidden lg:flex items-center justify-center"
+            className="hidden lg:flex flex-col items-center justify-center gap-4"
           >
-            <div className="relative w-80 h-80">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-full blur-3xl animate-pulse-glow" />
-              <div className="relative w-full h-full rounded-full glass-card flex items-center justify-center overflow-hidden">
-                <div className="text-center p-8">
-                  <div className="w-44 h-44 mx-auto rounded-full overflow-hidden ring-2 ring-primary/30 mb-4 shadow-xl shadow-primary/20">
-                    <Image
-                      src="/profile.png"
-                      alt="Akshay Panigrahi"
-                      width={176}
-                      height={176}
-                      className="w-full h-full object-cover scale-110"
-                      priority
-                    />
-                  </div>
-                  <a href={process.env.NEXT_PUBLIC_PORTFOLIO_URL || "#"} target="_blank" rel="noopener noreferrer" className="text-xl font-bold hover:text-primary transition-colors">Akshay Panigrahi</a>
-                  <p className="text-sm text-muted-foreground mt-1">Agentic AI Developer</p>
-                  <div className="flex justify-center gap-2 mt-4">
-                    {["Py", "AG", "LG"].map((s) => (
-                      <span
-                        key={s}
-                        className="text-xs px-2 py-1 rounded bg-primary/10 text-primary"
-                      >
-                        {s}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-purple-600/30 rounded-full blur-3xl animate-pulse-glow scale-110" />
+              <div className="relative w-72 h-72 rounded-full overflow-hidden ring-4 ring-primary/30 shadow-2xl shadow-primary/30">
+                <Image
+                  src="/profile.png"
+                  alt="Akshay Panigrahi"
+                  fill
+                  className="object-cover scale-110"
+                  priority
+                />
               </div>
-              <div className="absolute -top-4 -right-4 w-24 h-24 border border-primary/20 rounded-full animate-float" />
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 border border-purple-500/20 rounded-full animate-float" style={{ animationDelay: "2s" }} />
+              <div className="absolute -top-3 -right-3 w-20 h-20 border-2 border-primary/20 rounded-full animate-float" />
+              <div className="absolute -bottom-3 -left-3 w-14 h-14 border-2 border-purple-500/20 rounded-full animate-float" style={{ animationDelay: "2s" }} />
+            </div>
+            <div className="text-center">
+              <a
+                href={process.env.NEXT_PUBLIC_PORTFOLIO_URL || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-2xl font-bold hover:text-primary transition-colors"
+              >
+                Akshay Panigrahi
+              </a>
+              <p className="text-base text-muted-foreground mt-1">Agentic AI Developer</p>
+              <div className="flex justify-center gap-2 mt-3">
+                {["Py", "AG", "LG"].map((s) => (
+                  <span
+                    key={s}
+                    className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary font-medium"
+                  >
+                    {s}
+                  </span>
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>
