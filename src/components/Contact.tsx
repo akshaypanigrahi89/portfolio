@@ -74,7 +74,7 @@ export default function Contact() {
             </a>
 
             <a
-              href="https://linkedin.com/in/akshaypanigrahi"
+              href="https://www.linkedin.com/in/akshaypanigrahi89/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 glass-card rounded-lg p-5 hover:border-primary/30 transition-all group"
@@ -85,13 +85,13 @@ export default function Contact() {
               <div>
                 <p className="text-xs text-muted-foreground">LinkedIn</p>
                 <p className="text-sm font-medium">
-                  /in/akshaypanigrahi
+                  /in/akshaypanigrahi89
                 </p>
               </div>
             </a>
 
             <a
-              href="https://github.com/akshaypanigrahi"
+              href="https://github.com/akshaypanigrahi89"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 glass-card rounded-lg p-5 hover:border-primary/30 transition-all group"
@@ -101,7 +101,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-xs text-muted-foreground">GitHub</p>
-                <p className="text-sm font-medium">/akshaypanigrahi</p>
+                <p className="text-sm font-medium">/akshaypanigrahi89</p>
               </div>
             </a>
 
