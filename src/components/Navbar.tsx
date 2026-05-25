@@ -45,8 +45,8 @@ export default function Navbar() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled
-          ? "glass shadow-lg shadow-black/10"
+        scrolled || mobileOpen
+          ? "bg-background/95 backdrop-blur-md shadow-lg shadow-black/10"
           : "bg-transparent"
       )}
     >
@@ -88,14 +88,15 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass border-t border-border overflow-hidden"
+            className="md:hidden border-t border-border overflow-hidden"
+            style={{ background: "hsl(240 10% 3.9%)" }}
           >
-            <div className="flex flex-col px-6 py-4 gap-2">
+            <div className="flex flex-col px-6 py-4 gap-1">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => { setMobileOpen(false); scrollToSection(link.href); }}
-                  className="text-base font-medium text-foreground/90 hover:text-primary transition-colors py-3 px-4 text-left cursor-pointer rounded-lg hover:bg-primary/5"
+                  className="text-lg font-semibold text-white hover:text-primary transition-colors py-4 px-4 text-left cursor-pointer rounded-xl hover:bg-white/5 active:bg-white/10"
                 >
                   {link.label}
                 </button>
