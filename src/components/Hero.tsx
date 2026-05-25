@@ -71,7 +71,7 @@ export default function Hero() {
                 </a>
               </Button>
               <Button variant="secondary" size="lg" asChild>
-                <a href="#">
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                   <Download className="mr-2 w-4 h-4" />
                   Resume
                 </a>

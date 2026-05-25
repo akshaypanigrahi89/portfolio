@@ -90,12 +90,12 @@ export default function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden glass border-t border-border overflow-hidden"
           >
-            <div className="flex flex-col px-6 py-4 gap-3">
+            <div className="flex flex-col px-6 py-4 gap-2">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => { setMobileOpen(false); scrollToSection(link.href); }}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2 text-left cursor-pointer"
+                  className="text-base font-medium text-foreground/90 hover:text-primary transition-colors py-3 px-4 text-left cursor-pointer rounded-lg hover:bg-primary/5"
                 >
                   {link.label}
                 </button>
