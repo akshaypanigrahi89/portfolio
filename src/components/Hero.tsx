@@ -121,7 +121,7 @@ export default function Hero() {
                       priority
                     />
                   </div>
-                  <h3 className="text-xl font-bold">Akshay Panigrahi</h3>
+                  <a href={process.env.NEXT_PUBLIC_PORTFOLIO_URL || "#"} target="_blank" rel="noopener noreferrer" className="text-xl font-bold hover:text-primary transition-colors">Akshay Panigrahi</a>
                   <p className="text-sm text-muted-foreground mt-1">Agentic AI Developer</p>
                   <div className="flex justify-center gap-2 mt-4">
                     {["Py", "AG", "LG"].map((s) => (
