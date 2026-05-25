@@ -132,7 +132,7 @@ export default function Hero() {
           >
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-purple-600/30 rounded-full blur-3xl animate-pulse-glow scale-110" />
-              <div className="relative w-72 h-72 rounded-full overflow-hidden ring-4 ring-primary/30 shadow-2xl shadow-primary/30">
+              <div className="relative w-96 h-96 rounded-full overflow-hidden ring-4 ring-primary/30 shadow-2xl shadow-primary/30">
                 <Image
                   src="/profile.png"
                   alt="Akshay Panigrahi"
@@ -141,8 +141,8 @@ export default function Hero() {
                   priority
                 />
               </div>
-              <div className="absolute -top-3 -right-3 w-20 h-20 border-2 border-primary/20 rounded-full animate-float" />
-              <div className="absolute -bottom-3 -left-3 w-14 h-14 border-2 border-purple-500/20 rounded-full animate-float" style={{ animationDelay: "2s" }} />
+              <div className="absolute -top-4 -right-4 w-24 h-24 border-2 border-primary/20 rounded-full animate-float" />
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 border-2 border-purple-500/20 rounded-full animate-float" style={{ animationDelay: "2s" }} />
             </div>
           </motion.div>
         </div>
