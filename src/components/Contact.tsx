@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Mail,
+  Phone,
   Linkedin,
   Github,
   Send,
@@ -56,6 +57,19 @@ export default function Contact() {
                 <p className="text-sm font-medium">
                   akshaypanigrahi7@gmail.com
                 </p>
+              </div>
+            </a>
+
+            <a
+              href="tel:+917008550331"
+              className="flex items-center gap-4 glass-card rounded-lg p-5 hover:border-primary/30 transition-all group"
+            >
+              <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                <Phone className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <p className="text-xs text-muted-foreground">Phone</p>
+                <p className="text-sm font-medium">+91-7008550331</p>
               </div>
             </a>
 

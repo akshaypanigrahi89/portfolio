@@ -7,30 +7,25 @@ import AnimatedSection from "@/components/AnimatedSection";
 const education = [
   {
     degree: "Product Management with Generative & Agentic AI",
-    institution: "BITSoM",
+    institution: "BITSoM | 2025 — 2026",
     icon: GraduationCap,
   },
   {
-    degree: "AI Generalist",
-    institution: "Build School",
+    degree: "MBA — HR & Marketing",
+    institution: "IMIT, Odisha | 2018 — 2020",
     icon: GraduationCap,
   },
   {
-    degree: "MBA in HR & Marketing",
-    institution: "IMIT",
-    icon: GraduationCap,
-  },
-  {
-    degree: "B.Tech in Biotechnology",
-    institution: "GIET",
+    degree: "B.Tech — Biotechnology",
+    institution: "GIET University | 2007 — 2011",
     icon: FlaskConical,
   },
 ];
 
 const certifications = [
-  { title: "Product Management Certification", icon: Award },
-  { title: "Data Science Course", icon: BookOpen },
-  { title: "Scrum Master Certification", icon: Award },
+  { title: "Professional Product Management Certification", icon: Award },
+  { title: "Certified Scrum Master", icon: Award },
+  { title: "AI Generalist — Build School", icon: BookOpen },
   { title: "Learn Python with AI", icon: BookOpen },
 ];
 

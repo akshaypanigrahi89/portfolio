@@ -8,78 +8,62 @@ import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    title: "AI Hiring Intelligence Platform",
+    title: "AutoFounder AI — Autonomous Startup Builder",
     problem:
-      "Enterprise recruitment teams spent 60% of their time screening resumes and scheduling interviews manually, leading to slow hires and missed talent.",
+      "Turning startup ideas into validated, deployable products required months of manual work across market research, architecture, development, and deployment.",
     solution:
-      "Built an AI-powered platform using multi-agent RAG architecture that automates resume parsing, skill matching, interview scheduling, and candidate ranking.",
+      "Built an autonomous multi-agent SaaS platform using AutoGen, LangGraph & CrewAI that converts startup ideas into deployable products — handling market validation, PRD generation, architecture planning, code generation, and GTM orchestration.",
     tech: [
       "Python",
-      "LangChain",
+      "AutoGen",
       "LangGraph",
+      "CrewAI",
+      "LangChain",
       "FastAPI",
-      "AWS Bedrock",
-      "FAISS",
+      "AWS",
       "Docker",
+      "Kubernetes",
+      "Qdrant",
+      "Redis",
+      "Supabase",
     ],
-    impact: "90% reduction in screening time, 40% faster time-to-hire",
+    impact: "End-to-end autonomous startup generation with memory, reasoning & tool orchestration",
   },
   {
-    title: "Enterprise RAG Chatbot",
+    title: "RAGBase Enterprise Chatbot",
     problem:
       "Enterprise knowledge bases were underutilized — employees spent hours searching for information across fragmented documentation systems.",
     solution:
-      "Developed a production RAG chatbot with multi-source retrieval, citation tracking, and conversational memory using LLMs and vector databases.",
-    tech: [
-      "LangChain",
-      "Pinecone",
-      "OpenAI",
-      "FastAPI",
-      "Next.js",
-      "Kubernetes",
-    ],
-    impact: "10k+ daily queries with 90%+ accuracy, 60% faster information retrieval",
-  },
-  {
-    title: "AI Recruitment Platform",
-    problem:
-      "Recruitment agencies lacked intelligent automation for matching candidates to roles, leading to low placement rates and high manual effort.",
-    solution:
-      "Created an end-to-end AI recruitment platform with automated candidate sourcing, AI matching, and predictive analytics for hiring success.",
+      "Developed an end-to-end RAG chatbot with document ingestion, chunking, embeddings, semantic retrieval, contextual memory, and prompt engineering for high-accuracy responses.",
     tech: [
       "Python",
-      "LangFlow",
-      "Vertex AI",
-      "Cloud SQL",
-      "React",
+      "LangChain",
+      "FastAPI",
+      "Qdrant",
+      "FAISS",
+      "OpenAI API",
+      "SQL",
       "Docker",
     ],
-    impact: "50% improvement in placement rate, 40% operational efficiency gain",
+    impact: "10k+ daily queries with 90%+ retrieval accuracy via vector search & semantic pipelines",
   },
   {
-    title: "Conversational AI Assistant",
+    title: "ResumeBase AI — ATS & Resume Intelligence",
     problem:
-      "Customer support teams were overwhelmed with repetitive queries, resulting in high response times and low satisfaction scores.",
+      "Recruitment teams lacked intelligent automation for parsing, scoring, and matching candidates to roles — resulting in low placement rates and high manual effort.",
     solution:
-      "Designed a multilingual conversational AI assistant with intent recognition, sentiment analysis, and seamless human handoff.",
+      "Built an AI-powered ATS and resume intelligence platform with autonomous agents for resume parsing, semantic similarity matching, candidate scoring, and job matching using RAG pipelines.",
     tech: [
-      "Rasa",
-      "Dialogflow",
-      "NLU",
+      "Python",
+      "AutoGen",
+      "LangChain",
       "FastAPI",
-      "PostgreSQL",
-      "Redis",
+      "Vector DB",
+      "REST APIs",
+      "AWS",
+      "SQL",
     ],
-    impact: "70% automation of support queries, 35% improvement in CSAT scores",
-  },
-  {
-    title: "Cloud Native Analytics Platform",
-    problem:
-      "Business teams lacked real-time visibility into operational metrics, relying on stale dashboards and manual reporting.",
-    solution:
-      "Architected a cloud-native analytics platform with streaming data pipelines, real-time dashboards, and AI-driven insights.",
-    tech: ["Kafka", "Spark", "GCP", "BigQuery", "Tableau", "Python"],
-    impact: "Real-time analytics across 5 departments, 50% reduction in reporting time",
+    impact: "Automated resume evaluation with semantic matching & agentic scoring workflows",
   },
 ];
 

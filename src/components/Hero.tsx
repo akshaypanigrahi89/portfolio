@@ -6,10 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 const stats = [
-  { value: "6+", label: "Years Experience", icon: Brain },
-  { value: "90%+", label: "AI Accuracy", icon: Cpu },
+  { value: "3+", label: "Years Agentic AI", icon: Brain },
+  { value: "90%+", label: "RAG Accuracy", icon: Cpu },
   { value: "40%", label: "Efficiency Improvement", icon: Network },
-  { value: "Multi-Cloud", label: "AI Expertise", icon: Sparkles },
+  { value: "10+", label: "Years Digital Innovation", icon: Sparkles },
 ];
 
 export default function Hero() {
@@ -25,7 +25,7 @@ export default function Hero() {
             >
               <Badge variant="skill" className="mb-4 text-sm px-4 py-1.5">
                 <Sparkles className="w-3.5 h-3.5 mr-1.5" />
-                AI Engineer & Innovator
+                Agentic AI Developer
               </Badge>
             </motion.div>
 
@@ -47,8 +47,9 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-lg text-muted-foreground leading-relaxed max-w-xl"
             >
-              AI Engineer with 6+ years of experience specializing in Generative AI,
-              Multi-Agent Architectures, RAG Pipelines, and Production-Grade AI Platforms.
+              Agentic AI Developer with 3+ years building autonomous AI systems,
+              enterprise RAG pipelines, and multi-agent frameworks using AutoGen, LangGraph &amp; CrewAI.
+              10+ years driving digital transformation across AI, marketing &amp; product.
             </motion.p>
 
             <motion.div
@@ -113,9 +114,9 @@ export default function Hero() {
                     <span className="text-3xl font-bold">AP</span>
                   </div>
                   <h3 className="text-xl font-bold">Akshay Panigrahi</h3>
-                  <p className="text-sm text-muted-foreground mt-1">AI Engineer</p>
+                  <p className="text-sm text-muted-foreground mt-1">Agentic AI Developer</p>
                   <div className="flex justify-center gap-2 mt-4">
-                    {["Py", "LC", "KG"].map((s) => (
+                    {["Py", "AG", "LG"].map((s) => (
                       <span
                         key={s}
                         className="text-xs px-2 py-1 rounded bg-primary/10 text-primary"

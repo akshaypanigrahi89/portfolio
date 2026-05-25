@@ -1,16 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles, Bot, GitBranch, Cloud, Database, Cpu } from "lucide-react";
+import { Sparkles, Bot, GitBranch, Cloud, Database, Cpu, Workflow, MousePointerClick } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 
 const highlights = [
-  { icon: Bot, label: "Generative AI" },
-  { icon: GitBranch, label: "Agentic Workflows" },
-  { icon: Database, label: "RAG Systems" },
-  { icon: Sparkles, label: "LangChain / LangGraph" },
-  { icon: Cloud, label: "Cloud AI Infrastructure" },
-  { icon: Cpu, label: "Enterprise AI Platforms" },
+  { icon: Bot, label: "AutoGen & Multi-Agent Systems" },
+  { icon: GitBranch, label: "LangGraph / CrewAI" },
+  { icon: Database, label: "RAG & Vector Search" },
+  { icon: Workflow, label: "MCP / A2A Protocols" },
+  { icon: Cloud, label: "AWS, Azure, Docker, K8s" },
+  { icon: MousePointerClick, label: "n8n & Workflow Automation" },
 ];
 
 export default function About() {
@@ -33,21 +33,21 @@ export default function About() {
             className="space-y-6"
           >
             <p className="text-muted-foreground leading-relaxed">
-              AI Engineer with 6+ years of experience architecting and deploying
-              enterprise-grade Generative AI solutions. I specialize in building
-              scalable multi-agent systems, high-precision RAG pipelines, and
-              production LLM platforms that drive measurable business impact.
+              Agentic AI Developer with 3+ years building autonomous AI systems
+              using AutoGen, LangGraph, CrewAI, and LangChain. I specialize in
+              multi-agent architectures, enterprise RAG pipelines, and scalable
+              AI-powered applications using LLMs and agentic frameworks.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              My expertise spans the full AI stack — from designing agentic
-              workflows with LangChain and LangGraph to deploying on AWS Bedrock,
-              Vertex AI, and Azure. I have delivered platforms achieving 90%+
-              accuracy and 40% operational efficiency improvements for enterprise
-              clients.
+              I bring deep expertise in Python, vector databases (Qdrant, FAISS),
+              FastAPI microservices, cloud deployment (AWS, Azure, Docker, K8s),
+              and LLMOps. Additionally, 10+ years in Digital Marketing Agencies
+              spanning SEO, UI/UX, web development, automation, and client strategy.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Based in Bengaluru, I am passionate about bridging the gap between
-              cutting-edge AI research and production-ready enterprise systems.
+              Based in Bengaluru, I bridge the gap between cutting-edge Agentic AI
+              and real-world enterprise impact — delivering production-grade systems
+              with 90%+ accuracy and 40% efficiency gains.
             </p>
           </motion.div>
 

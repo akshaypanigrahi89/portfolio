@@ -13,17 +13,16 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Akshay Panigrahi | AI Engineer — Generative AI, Agentic AI & RAG Systems",
+  title: "Akshay Panigrahi | Agentic AI Developer — AutoGen, LangGraph, RAG Systems",
   description:
-    "AI Engineer with 6+ years of experience specializing in Generative AI, Multi-Agent Architectures, RAG Pipelines, and Production-Grade AI Platforms.",
+    "Agentic AI Developer with 3+ years building autonomous AI systems, enterprise RAG pipelines, and scalable AI applications using LLMs and multi-agent frameworks. 10+ years in digital transformation.",
   keywords: [
-    "AI Engineer",
-    "Generative AI",
-    "Agentic AI",
-    "RAG Systems",
-    "LangChain",
+    "Agentic AI Developer",
+    "AutoGen",
     "LangGraph",
-    "Machine Learning",
+    "CrewAI",
+    "RAG Systems",
+    "Generative AI",
     "Akshay Panigrahi",
   ],
   authors: [{ name: "Akshay Panigrahi" }],
@@ -32,18 +31,18 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://akshaypanigrahi.vercel.app",
-    siteName: "Akshay Panigrahi | AI Engineer",
+    siteName: "Akshay Panigrahi | Agentic AI Developer",
     title:
-      "Akshay Panigrahi | AI Engineer — Generative AI, Agentic AI & RAG Systems",
+      "Akshay Panigrahi | Agentic AI Developer — AutoGen, LangGraph, RAG Systems",
     description:
-      "AI Engineer with 6+ years of experience specializing in Generative AI, Multi-Agent Architectures, RAG Pipelines, and Production-Grade AI Platforms.",
+      "Agentic AI Developer with 3+ years building autonomous AI systems, enterprise RAG pipelines, and scalable AI applications using LLMs and multi-agent frameworks. 10+ years in digital transformation.",
   },
   twitter: {
     card: "summary_large_image",
     title:
-      "Akshay Panigrahi | AI Engineer — Generative AI, Agentic AI & RAG Systems",
+      "Akshay Panigrahi | Agentic AI Developer — AutoGen, LangGraph, RAG Systems",
     description:
-      "AI Engineer with 6+ years of experience specializing in Generative AI, Multi-Agent Architectures, RAG Pipelines, and Production-Grade AI Platforms.",
+      "Agentic AI Developer with 3+ years building autonomous AI systems, enterprise RAG pipelines, and scalable AI applications using LLMs and multi-agent frameworks. 10+ years in digital transformation.",
   },
   robots: {
     index: true,
