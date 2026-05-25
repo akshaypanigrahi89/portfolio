@@ -110,6 +110,7 @@ html {
 
 .section-padding {
   padding: 6rem 1.5rem;
+  scroll-margin-top: 5rem;
 }
 
 @media (min-width: 768px) {

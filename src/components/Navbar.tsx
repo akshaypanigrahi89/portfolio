@@ -6,6 +6,8 @@ import { Menu, X, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+const NAVBAR_HEIGHT = 72;
+
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
@@ -14,6 +16,15 @@ const navLinks = [
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
+
+function scrollToSection(href: string) {
+  const id = href.replace("#", "");
+  const el = document.getElementById(id);
+  if (el) {
+    const top = el.getBoundingClientRect().top + window.scrollY - NAVBAR_HEIGHT;
+    window.scrollTo({ top, behavior: "smooth" });
+  }
+}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -40,23 +51,23 @@ export default function Navbar() {
       )}
     >
       <nav className="container-max flex items-center justify-between px-6 py-4">
-        <a href="#home" className="flex items-center gap-2 group">
+        <button onClick={() => scrollToSection("#home")} className="flex items-center gap-2 group cursor-pointer">
           <Sparkles className="w-5 h-5 text-primary group-hover:rotate-12 transition-transform" />
           <span className="text-lg font-bold tracking-tight">
             Akshay <span className="text-primary">Panigrahi</span>
           </span>
-        </a>
+        </button>
 
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <button
               key={link.href}
-              href={link.href}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors relative group"
+              onClick={() => scrollToSection(link.href)}
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors relative group cursor-pointer"
             >
               {link.label}
               <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary transition-all group-hover:w-full" />
-            </a>
+            </button>
           ))}
         </div>
 
@@ -81,14 +92,13 @@ export default function Navbar() {
           >
             <div className="flex flex-col px-6 py-4 gap-3">
               {navLinks.map((link) => (
-                <a
+                <button
                   key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
+                  onClick={() => { setMobileOpen(false); scrollToSection(link.href); }}
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2 text-left cursor-pointer"
                 >
                   {link.label}
-                </a>
+                </button>
               ))}
             </div>
           </motion.div>

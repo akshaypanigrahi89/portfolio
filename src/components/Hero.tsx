@@ -111,13 +111,13 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-full blur-3xl animate-pulse-glow" />
               <div className="relative w-full h-full rounded-full glass-card flex items-center justify-center overflow-hidden">
                 <div className="text-center p-8">
-                  <div className="w-28 h-28 mx-auto rounded-full overflow-hidden ring-2 ring-primary/30 mb-4">
+                  <div className="w-44 h-44 mx-auto rounded-full overflow-hidden ring-2 ring-primary/30 mb-4 shadow-xl shadow-primary/20">
                     <Image
                       src="/profile.png"
                       alt="Akshay Panigrahi"
-                      width={112}
-                      height={112}
-                      className="w-full h-full object-cover"
+                      width={176}
+                      height={176}
+                      className="w-full h-full object-cover scale-110"
                       priority
                     />
                   </div>
