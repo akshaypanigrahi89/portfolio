@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import {
   Mail,
@@ -10,17 +10,45 @@ import {
   Send,
   MapPin,
   Sparkles,
+  Loader2,
+  CheckCircle2,
+  AlertCircle,
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Button } from "@/components/ui/button";
 
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+    setStatus("loading");
+
+    const form = new FormData(e.currentTarget as HTMLFormElement);
+    const data = {
+      name: form.get("name"),
+      email: form.get("email"),
+      subject: form.get("subject"),
+      message: form.get("message"),
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) throw new Error("Failed to send");
+
+      setStatus("success");
+      formRef.current?.reset();
+      setTimeout(() => setStatus("idle"), 4000);
+    } catch {
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 4000);
+    }
   };
 
   return (
@@ -117,6 +145,7 @@ export default function Contact() {
           </motion.div>
 
           <motion.form
+            ref={formRef}
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -136,6 +165,7 @@ export default function Contact() {
                 </label>
                 <input
                   id="name"
+                  name="name"
                   type="text"
                   required
                   className="w-full px-4 py-2.5 rounded-lg bg-background border border-border text-sm focus:outline-none focus:border-primary/50 transition-colors"
@@ -148,6 +178,7 @@ export default function Contact() {
                 </label>
                 <input
                   id="email"
+                  name="email"
                   type="email"
                   required
                   className="w-full px-4 py-2.5 rounded-lg bg-background border border-border text-sm focus:outline-none focus:border-primary/50 transition-colors"
@@ -160,41 +191,43 @@ export default function Contact() {
               <label htmlFor="subject" className="block text-xs text-muted-foreground mb-1.5">
                 Subject
               </label>
-              <input
-                id="subject"
-                type="text"
-                required
-                className="w-full px-4 py-2.5 rounded-lg bg-background border border-border text-sm focus:outline-none focus:border-primary/50 transition-colors"
-                placeholder="What's this about?"
-              />
+                <input
+                  id="subject"
+                  name="subject"
+                  type="text"
+                  className="w-full px-4 py-2.5 rounded-lg bg-background border border-border text-sm focus:outline-none focus:border-primary/50 transition-colors"
+                  placeholder="What's this about?"
+                />
             </div>
 
             <div>
               <label htmlFor="message" className="block text-xs text-muted-foreground mb-1.5">
                 Message
               </label>
-              <textarea
-                id="message"
-                required
-                rows={4}
-                className="w-full px-4 py-2.5 rounded-lg bg-background border border-border text-sm focus:outline-none focus:border-primary/50 transition-colors resize-none"
-                placeholder="Tell me about your project..."
-              />
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows={4}
+                  className="w-full px-4 py-2.5 rounded-lg bg-background border border-border text-sm focus:outline-none focus:border-primary/50 transition-colors resize-none"
+                  placeholder="Tell me about your project..."
+                />
             </div>
 
             <Button
               type="submit"
               variant="gradient"
               className="w-full"
-              disabled={submitted}
+              disabled={status === "loading" || status === "success"}
             >
-              {submitted ? (
-                "Message Sent!"
+              {status === "loading" ? (
+                <><Loader2 className="mr-2 w-4 h-4 animate-spin" /> Sending...</>
+              ) : status === "success" ? (
+                <><CheckCircle2 className="mr-2 w-4 h-4" /> Message Sent!</>
+              ) : status === "error" ? (
+                <><AlertCircle className="mr-2 w-4 h-4" /> Failed — Try Again</>
               ) : (
-                <>
-                  <Send className="mr-2 w-4 h-4" />
-                  Send Message
-                </>
+                <><Send className="mr-2 w-4 h-4" /> Send Message</>
               )}
             </Button>
           </motion.form>
