@@ -1,14 +1,23 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
+import { Bot, Braces, Database, Workflow, Cpu, Network } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+
+const layers = [
+  { icon: Bot, label: "Multi-Agent Orchestration", tech: "AutoGen • LangGraph • CrewAI", color: "from-blue-500 to-cyan-500" },
+  { icon: Braces, label: "LLM & Reasoning Layer", tech: "GPT-4 • Claude • Gemini • Fine-Tuning", color: "from-purple-500 to-pink-500" },
+  { icon: Database, label: "RAG & Vector Search", tech: "Qdrant • FAISS • ChromaDB • Embeddings", color: "from-emerald-500 to-teal-500" },
+  { icon: Workflow, label: "Tools & API Orchestration", tech: "n8n • MCP • A2A • REST • gRPC", color: "from-orange-500 to-red-500" },
+  { icon: Cpu, label: "Memory & Context Systems", tech: "Redis • Buffer • Persistent Memory", color: "from-violet-500 to-indigo-500" },
+  { icon: Network, label: "Cloud Infrastructure", tech: "AWS • Azure • Docker • K8s • CI/CD", color: "from-amber-500 to-yellow-500" },
+];
 
 export default function About() {
   return (
     <AnimatedSection id="about" className="section-padding">
       <div className="container-max">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -64,25 +73,46 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative flex justify-center items-center"
+            className="space-y-4"
           >
-            <div className="w-[400px] h-[500px] glass-card rounded-2xl overflow-hidden border-border">
-              <Image
-                src="/profile.png"
-                alt="Akshay Panigrahi"
-                fill
-                className="object-cover"
-              />
+            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2 text-center">
+              Agentic AI Architecture Stack
+            </p>
+
+            <div className="relative">
+              <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500/50 via-purple-500/50 to-transparent" />
+
+              <div className="space-y-6">
+                {layers.map((layer, i) => (
+                  <motion.div
+                    key={layer.label}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.1 }}
+                    className="relative pl-14 group"
+                  >
+                    <div className="absolute left-4 top-3 w-4 h-4 rounded-full bg-gradient-to-br shadow-lg shadow-primary/20 ring-2 ring-background"
+                      style={{ background: `linear-gradient(135deg, hsl(${210 + i * 30}, 80%, 55%), hsl(${240 + i * 20}, 70%, 60%))` }}
+                    />
+
+                    <div className="glass-card rounded-xl p-4 hover:border-primary/30 transition-all">
+                      <div className="flex items-center gap-3 mb-1.5">
+                        <layer.icon className="w-4 h-4 text-primary" />
+                        <h4 className="font-semibold text-sm">{layer.label}</h4>
+                      </div>
+                      <p className="text-xs text-muted-foreground">{layer.tech}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
 
-            <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-4 rounded-2xl shadow-xl">
-              <h3 className="text-2xl font-bold">3+ Years</h3>
-              <p className="text-sm font-medium">Agentic AI Experience</p>
-            </div>
-
-            <div className="absolute top-8 -right-8 glass-card border-border px-5 py-4 rounded-2xl shadow-lg">
-              <p className="text-primary text-sm mb-1 font-medium">Core Stack</p>
-              <h4 className="font-semibold text-sm">Python • AutoGen • LangChain</h4>
+            <div className="text-center pt-4">
+              <span className="inline-flex items-center gap-2 text-xs text-muted-foreground bg-secondary/50 px-4 py-2 rounded-full border border-border">
+                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                Production-Ready • End-to-End • Enterprise Scale
+              </span>
             </div>
           </motion.div>
         </div>
